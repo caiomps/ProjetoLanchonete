@@ -44,7 +44,7 @@ const ModalCarrinho = ({ setIsActive }) => {
 
   // array com os nomes dos pedidos
   let todosNames = produtosCarrinho.map((produto) => {
-    return `• ${produto.nome}`;
+    return produto.nome;
   });
 
   // Fechar Modal
@@ -61,7 +61,7 @@ const ModalCarrinho = ({ setIsActive }) => {
 
     const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
 
-    todosNames === true ? window.open(url, "_blank") : "";
+    todosNames.length > 0 ? window.open(url, "_blank") : "";
   };
 
   return (
