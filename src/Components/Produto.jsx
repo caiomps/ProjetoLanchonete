@@ -19,7 +19,7 @@ const Produto = ({ nome, preco, descricao, img }) => {
   };
 
   return (
-    <div className="flex gap-2 max-w-[90%] mx-auto border-b-2">
+    <div className="flex gap-2 max-w-[90%] mx-auto shadow-gray-800">
       {/* imagem do produto */}
       <div className="flex items-end">
         <img src={img} alt="foto do Produto" className="w-40 h-25 rounded-md" />

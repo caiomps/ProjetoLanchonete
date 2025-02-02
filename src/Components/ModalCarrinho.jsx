@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { CarrinhoContext } from "../Context/CarrinhoContext";
 import fechar from "../assets/fechar.png";
 
@@ -9,6 +9,14 @@ const ModalCarrinho = ({ setIsActive }) => {
   let valor = 0;
 
   const [input, setInput] = useState("");
+
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, []);
 
   // Listar pedidos no carrinho de compra
   let allProducts = produtosCarrinho.map((produto) => {
@@ -21,7 +29,7 @@ const ModalCarrinho = ({ setIsActive }) => {
       >
         <div className="max-w-60">
           <h1 className="font-bold">
-            {produto.nome} - {produto.preco} R$
+            2 x {produto.nome} - {produto.preco} R$
           </h1>
           <h3>{produto.descricao}</h3>
         </div>
@@ -50,7 +58,6 @@ const ModalCarrinho = ({ setIsActive }) => {
   // Fechar Modal
   let fecharModal = () => {
     setIsActive(false);
-    console.log(todosNames);
   };
 
   // Finalizar pedido
@@ -64,8 +71,19 @@ const ModalCarrinho = ({ setIsActive }) => {
     todosNames.length > 0 ? window.open(url, "_blank") : "";
   };
 
+  let voltarHomePage = () => {
+    setIsActive(false);
+  };
+
   return (
-    <div className="w-screen h-screen fixed top-0  backdrop-blur-md flex items-center justify-center overflow-y-hidden">
+    <div
+      onClick={(e) => {
+        if (e.target === e.currentTarget) {
+          fecharModal();
+        }
+      }}
+      className="w-screen h-screen fixed top-0  backdrop-blur-md flex items-center justify-center overflow-y-hidden"
+    >
       {/* modal   */}
       <div className="w-4/5 max-w-3xl h-[30em] bg-white border-4 border-black">
         <h1 className="text-center font-bold text-4xl">Seu Carrinho</h1>
