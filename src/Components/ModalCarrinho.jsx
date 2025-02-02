@@ -15,8 +15,11 @@ const ModalCarrinho = ({ setIsActive }) => {
     valor += produto.preco;
 
     return (
-      <li key={produto.id} className="border-b-2 py-1 flex justify-between">
-        <div className="">
+      <li
+        key={produto.id}
+        className="border-b-2 py-1 flex justify-between items-center min-h-[50px]"
+      >
+        <div className="max-w-80">
           <h1 className="font-bold">
             {produto.nome} - {produto.preco} R$
           </h1>
