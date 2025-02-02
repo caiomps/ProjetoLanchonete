@@ -25,12 +25,12 @@ const ModalCarrinho = ({ setIsActive }) => {
           </h1>
           <h3>{produto.descricao}</h3>
         </div>
-        <div className="h-full flex justify-center items-center">
+        <div className="h-full flex justify-center items-center min-w-8">
           <img
             onClick={() => removerDoCarrinho(produto)}
             src={fechar}
             alt=""
-            className="w-8 h-8 cursor-pointer"
+            className="min-w-8 h-8 cursor-pointer"
           />
         </div>
       </li>
