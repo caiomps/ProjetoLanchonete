@@ -19,18 +19,18 @@ const ModalCarrinho = ({ setIsActive }) => {
         key={produto.id}
         className="border-b-2 py-1 flex justify-between items-center min-h-[50px]"
       >
-        <div className="max-w-72">
+        <div className="max-w-60">
           <h1 className="font-bold">
             {produto.nome} - {produto.preco} R$
           </h1>
           <h3>{produto.descricao}</h3>
         </div>
-        <div className="h-full flex justify-center items-center min-w-8">
+        <div className="h-full flex justify-center items-center w-8">
           <img
             onClick={() => removerDoCarrinho(produto)}
             src={fechar}
             alt=""
-            className="min-w-8 h-8 cursor-pointer"
+            className="w-8 h-8 cursor-pointer"
           />
         </div>
       </li>
