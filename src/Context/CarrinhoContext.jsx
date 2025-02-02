@@ -11,6 +11,15 @@ export const CarrinhoProvider = ({ children }) => {
     console.log(produtosCarrinho);
   };
 
+  let removerDoCarrinho = (produto) => {
+    setCount(count - 1);
+    setProdutosCarrinho(
+      produtosCarrinho.filter((elemento) => {
+        return elemento !== produto;
+      })
+    );
+  };
+
   return (
     <CarrinhoContext.Provider
       value={{
@@ -19,6 +28,7 @@ export const CarrinhoProvider = ({ children }) => {
         adicionarAoCarrinho,
         count,
         setCount,
+        removerDoCarrinho,
       }}
     >
       {children}

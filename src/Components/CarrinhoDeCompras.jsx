@@ -15,7 +15,7 @@ const CarrinhoDeCompras = () => {
     <>
       <div
         onClick={handleModal}
-        className="bg-red-500 fixed bottom-0 h-15 min-w-screen cursor-pointer"
+        className="bg-red-500 fixed bottom-0 h-15 min-w-screen cursor-pointer flex justify-center items-center"
       >
         <h1 className="text-center text-white font-bold text-xl">
           ( {count} ) Veja Meu Carrinho

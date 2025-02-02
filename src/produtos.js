@@ -1,38 +1,67 @@
+import hamburguer from "./assets/hamburguer.jpg";
+import fantaLaranja from "./assets/fantaLaranja.png";
+import sucoDeLaranja from "./assets/sucoDeLaranja.png";
+import guarana from "./assets/guarana.png";
+
 const produtos = [
   {
     id: 0,
-    nome: "Smash Burguer",
-    preco: 20,
-    descricao: "com bastante queijo",
-    img: "./assets/hamburguer.jpg",
+    nome: "Cheese Smash",
+    preco: 22,
+    descricao: "Smash burguer com queijo derretido e molho especial",
+    img: hamburguer,
   },
   {
     id: 1,
-    nome: "Smash Bacon",
-    preco: 30,
-    descricao: "com bastante queijo",
-    img: "./assets/hamburguer.jpg",
+    nome: "Bacon Smash",
+    preco: 32,
+    descricao: "Smash burguer com bacon crocante e queijo",
+    img: hamburguer,
   },
   {
     id: 2,
-    nome: "Smash Duplo Burguer",
-    preco: 40,
-    descricao: "com bastante queijo",
-    img: "./assets/hamburguer.jpg",
+    nome: "Duplo Smash",
+    preco: 42,
+    descricao: "Dois smash burguers suculentos com queijo",
+    img: hamburguer,
   },
   {
     id: 3,
-    nome: "Smash Queijo",
-    preco: 50,
-    descricao: "com bastante queijo",
-    img: "./assets/hamburguer.jpg",
+    nome: "Smash Extra Queijo",
+    preco: 52,
+    descricao: "Smash burguer com uma generosa camada extra de queijo",
+    img: hamburguer,
   },
   {
     id: 4,
-    nome: "Smash Burguer",
-    preco: 60,
-    descricao: "com bastante queijo",
-    img: "./assets/hamburguer.jpg",
+    nome: "Clássico Smash",
+    preco: 62,
+    descricao: "O tradicional smash burguer com um toque especial",
+    img: hamburguer,
+  },
+];
+
+export const bebidas = [
+  {
+    id: 1,
+    nome: "Guarana",
+    preco: 8,
+    descricao: "",
+    img: guarana,
+  },
+  {
+    id: 2,
+    nome: "Suco de Laranja",
+    preco: 10,
+    descricao: "",
+    img: sucoDeLaranja,
+  },
+  {
+    id: 3,
+    nome: "Fanta Laranja",
+    preco: 52,
+    descricao: "",
+    img: fantaLaranja,
   },
 ];
 
