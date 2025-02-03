@@ -20,7 +20,7 @@ const ModalCarrinho = ({ setIsActive }) => {
 
   // Listar pedidos no carrinho de compra
   let allProducts = produtosCarrinho.map((produto) => {
-    valor += produto.preco;
+    valor += produto.preco * produto.quantidade;
 
     return (
       <li
@@ -29,7 +29,7 @@ const ModalCarrinho = ({ setIsActive }) => {
       >
         <div className="max-w-60">
           <h1 className="font-bold">
-            2 x {produto.nome} - {produto.preco} R$
+            {produto.quantidade} x {produto.nome} - {produto.preco} R$
           </h1>
           <h3>{produto.descricao}</h3>
         </div>
@@ -52,7 +52,7 @@ const ModalCarrinho = ({ setIsActive }) => {
 
   // array com os nomes dos pedidos
   let todosNames = produtosCarrinho.map((produto) => {
-    return produto.nome;
+    return `${produto.quantidade} x ${produto.nome}`;
   });
 
   // Fechar Modal

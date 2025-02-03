@@ -14,6 +14,7 @@ const Cardapio = () => {
     return (
       <li key={produto.id}>
         <Produto
+          id={produto.id}
           nome={produto.nome}
           preco={produto.preco}
           descricao={produto.descricao}

@@ -6,10 +6,25 @@ export const CarrinhoProvider = ({ children }) => {
   const [count, setCount] = useState(0);
   const [produtosCarrinho, setProdutosCarrinho] = useState([]);
 
-  let adicionarAoCarrinho = (produto) => {
-    setProdutosCarrinho([...produtosCarrinho, produto]);
-    console.log(produtosCarrinho);
+  const adicionarAoCarrinho = (produto) => {
+    const produtoExistente = produtosCarrinho.find(
+      (item) => item.id === produto.id
+    );
+
+    if (produtoExistente) {
+      // Atualiza a quantidade do produto já existente
+      const novoCarrinho = produtosCarrinho.map((item) =>
+        item.id === produto.id
+          ? { ...item, quantidade: item.quantidade + 1 }
+          : item
+      );
+      setProdutosCarrinho(novoCarrinho);
+    } else {
+      // Adiciona um novo produto ao carrinho
+      setProdutosCarrinho([...produtosCarrinho, { ...produto, quantidade: 1 }]);
+    }
   };
+  console.log(produtosCarrinho);
 
   let removerDoCarrinho = (produto) => {
     setCount(count - 1);
@@ -35,27 +50,3 @@ export const CarrinhoProvider = ({ children }) => {
     </CarrinhoContext.Provider>
   );
 };
-
-// const reducer = (state, action) => {
-//   switch (action.type) {
-//     case "incrementar":
-//       return { count: state.count + 1 };
-//       break;
-//     case "adicionar":
-//       return { ...state, produto: [...produtos, action.payload] };
-//   }
-// };
-
-// const CarrinhoProvider = ({ children }) => {
-//   let stateInitial = { count: 0, produtos: [] };
-
-//   const [state, dispatch] = useReducer(reducer, stateInitial);
-
-//   return (
-//     <CarrinhoContext.Provider value={{ state, dispatch }}>
-//       {children}
-//     </CarrinhoContext.Provider>
-//   );
-// };
-
-// export default CarrinhoProvider;

@@ -10,6 +10,7 @@ const produtos = [
     preco: 22,
     descricao: "Smash burguer com queijo derretido e molho especial",
     img: hamburguer,
+    quantidade: 0,
   },
   {
     id: 1,
@@ -17,6 +18,7 @@ const produtos = [
     preco: 32,
     descricao: "Smash burguer com bacon crocante e queijo",
     img: hamburguer,
+    quantidade: 0,
   },
   {
     id: 2,
@@ -24,6 +26,7 @@ const produtos = [
     preco: 42,
     descricao: "Dois smash burguers suculentos com queijo",
     img: hamburguer,
+    quantidade: 0,
   },
   {
     id: 3,
@@ -31,6 +34,7 @@ const produtos = [
     preco: 52,
     descricao: "Smash burguer com uma generosa camada extra de queijo",
     img: hamburguer,
+    quantidade: 0,
   },
   {
     id: 4,
@@ -38,6 +42,7 @@ const produtos = [
     preco: 62,
     descricao: "O tradicional smash burguer com um toque especial",
     img: hamburguer,
+    quantidade: 0,
   },
 ];
 
@@ -48,6 +53,7 @@ export const bebidas = [
     preco: 8,
     descricao: "",
     img: guarana,
+    quantidade: 0,
   },
   {
     id: 2,
@@ -55,6 +61,7 @@ export const bebidas = [
     preco: 10,
     descricao: "",
     img: sucoDeLaranja,
+    quantidade: 0,
   },
   {
     id: 3,
@@ -62,6 +69,7 @@ export const bebidas = [
     preco: 52,
     descricao: "",
     img: fantaLaranja,
+    quantidade: 0,
   },
 ];
 

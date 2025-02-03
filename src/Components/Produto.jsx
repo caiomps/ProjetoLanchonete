@@ -1,17 +1,21 @@
-import hamburguer from "../assets/hamburguer.jpg";
 import addCarrinho from "../assets/addCarrinho.png";
 // useContext
 import { CarrinhoContext } from "../Context/CarrinhoContext";
 import { useContext } from "react";
 
-const Produto = ({ nome, preco, descricao, img }) => {
+// Componente Produto
+const Produto = ({ id, nome, preco, descricao, img, quantidade }) => {
+  // desestruturando o array do useContext
   const { count, setCount, adicionarAoCarrinho } = useContext(CarrinhoContext);
 
+  // quando clicar no icone no card adiciona no carrinho do context
   let adicionarCarrinho = () => {
     const produto = {
+      id,
       nome,
       preco,
       descricao,
+      quantidade: 0,
     };
 
     setCount(count + 1);
