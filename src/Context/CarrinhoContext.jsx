@@ -27,13 +27,15 @@ export const CarrinhoProvider = ({ children }) => {
   console.log(produtosCarrinho);
 
   let removerDoCarrinho = (produto) => {
-    setCount(count - 1);
+    setCount(count - produto.quantidade);
+    console.log(count);
     setProdutosCarrinho(
       produtosCarrinho.filter((elemento) => {
         return elemento !== produto;
       })
     );
   };
+  console.log(count);
 
   return (
     <CarrinhoContext.Provider
